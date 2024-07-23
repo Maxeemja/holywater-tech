@@ -1,6 +1,6 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ThankYou.scss';
+import {questions} from "../../shared/dummy-data.js";
 
 function ThankYou() {
     const navigate = useNavigate();
@@ -17,7 +17,7 @@ function ThankYou() {
 
         let csvContent = "order,title,type,answer\n";
         Object.entries(answers).forEach(([questionId, answer]) => {
-            csvContent += `${questionId},Question ${questionId},single-select,${answer}\n`;
+            csvContent += `${questionId},${questions[questionId - 1].type},${answer}\n`;
         });
 
         const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });

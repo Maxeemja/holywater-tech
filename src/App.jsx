@@ -8,7 +8,7 @@ function App() {
         <Router>
             <div className="App">
                 <Routes>
-                    <Route path="/" element={<Quiz/>}/>
+                    <Route path="/" redirectTo={'/quiz'}/>
                     <Route path="/quiz/:questionId" element={<Quiz/>}/>
                     <Route path="/email" element={<EmailInput/>}/>
                     <Route path="/thank-you" element={<ThankYou/>}/>

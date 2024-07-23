@@ -147,7 +147,7 @@ function Quiz() {
                     <button
                         key={index}
                         onClick={() => handleAnswer(option[language])}
-                        className={`option-button multiple ${isOptionSelected(option) ? 'selected' : ''}`}
+                        className={`option-button bubble ${isOptionSelected(option) ? 'selected' : ''}`}
                     >
                         <img src={option.image} alt={option[language]}/>
                         <span>{option[language]}</span>
@@ -176,7 +176,7 @@ function Quiz() {
             <div className={`options-container ${currentQuestion.type}`}>
                 {renderOptions()}
             </div>
-            {(currentQuestion.type === 'checkbox-select' || currentQuestion.type === 'multiple-select') && (
+            {(currentQuestion.type === 'multiple-select' || currentQuestion.type === 'bubble-select') && (
                 <button
                     className="next-button"
                     onClick={handleNext}

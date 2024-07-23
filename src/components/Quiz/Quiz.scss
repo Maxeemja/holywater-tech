@@ -49,10 +49,13 @@
     flex-direction: column;
     gap: 10px;
 
-    &.bubble {
+    &.bubble-select {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
+      .option-button {
+        justify-content: center;
+      }
     }
   }
 
@@ -71,9 +74,14 @@
     &.single-select, &.multiple-select {
       border-radius: 10px;
     }
+    
 
     &.bubble {
-      width: calc(33.33% - 10px);
+      width: 88px;
+      height: 88px;
+      font-size: 13px;
+      line-height: 16px;
+      gap: 1px;
       flex-direction: column;
       border-radius: 50px;
       padding: 10px;
@@ -91,26 +99,40 @@
       }
     }
 
-    &.multiple-select {
-      .checkbox {
-        width: 20px;
-        height: 20px;
-        border: 2px solid #FF00A7;
-        border-radius: 4px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .checkbox {
 
-        .checkbox-inner {
-          width: 12px;
-          height: 12px;
-          background-color: #FF00A7;
-          border-radius: 2px;
-        }
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      width: 20px;
+
+      height: 20px;
+
+      border: 2px solid white;
+
+      border-radius: 50%;
+
+      margin-left: 10px;
+
+
+      .checkbox-inner {
+
+        width: 10px;
+
+        height: 10px;
+
+        background-color: white;
+
+        border-radius: 50%;
+
       }
+
     }
 
-    &.bubble {
+    &.bubble-select {
       img {
         width: 50px;
         height: 50px;
