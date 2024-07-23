@@ -3,6 +3,11 @@
   max-width: 600px;
   margin: 0 auto;
 
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
   .quiz-header {
     display: flex;
     justify-content: space-between;
@@ -15,34 +20,120 @@
     border: none;
     font-size: 16px;
     cursor: pointer;
+    color: white;
   }
 
   .question-number {
     font-size: 14px;
+    color: #FF00A7;
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+
+    .highlight {
+      color: #FF00A7;
+    }
+  }
+
+  .instruction {
+    font-size: 14px;
+    text-align: center;
     margin-bottom: 20px;
   }
 
   .options-container {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+
+    &.bubble {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   .option-button {
-    background-color: #f0f0f0;
+    background-color: #3D1353;
     border: none;
     padding: 15px;
-    margin-bottom: 10px;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 5px;
+    color: white;
     transition: background-color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &.single-select, &.multiple-select {
+      border-radius: 10px;
+    }
+
+    &.bubble {
+      width: calc(33.33% - 10px);
+      flex-direction: column;
+      border-radius: 50px;
+      padding: 10px;
+    }
 
     &:hover {
-      background-color: #e0e0e0;
+      background-color: #5A1E7A;
+    }
+
+    &.selected {
+      background-color: #5A1E7A;
+
+      &.single-select {
+        background-color: #FF00A7;
+      }
+    }
+
+    &.multiple-select {
+      .checkbox {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #FF00A7;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .checkbox-inner {
+          width: 12px;
+          height: 12px;
+          background-color: #FF00A7;
+          border-radius: 2px;
+        }
+      }
+    }
+
+    &.bubble {
+      img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .next-button {
+    background-color: #FF00A7;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: opacity 0.3s;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
   }
 }
